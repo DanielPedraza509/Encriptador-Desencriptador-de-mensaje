@@ -11,7 +11,8 @@ function encriptar(mensaje){
         document.getElementById("mensajeH3").style.visibility = "visible";
         document.getElementById("Persona").style.visibility = "visible";
         document.getElementById("mensajeResultado").style.visibility = "hidden" ;
-        alert("Campo de texto vacío") ;
+        document.getElementById("mensajeH2").style.visibility = "visible";
+       // alert("Campo de texto vacío") ;
        }
        else{
             
@@ -30,7 +31,6 @@ function encriptar(mensaje){
            document.getElementById("mensajeH2").style.visibility = "hidden";
            document.getElementById("mensajeH3").style.visibility = "hidden";
            document.getElementById("Persona").style.visibility = "hidden";
-           
        }
 
     return  ; 
@@ -39,6 +39,9 @@ function encriptar(mensaje){
 function desencriptar(mensaje){
     return alert("Mensaje desencriptado")
 }
+
+    
+
 
  
 var buttonEncriptar = document.getElementById("boton1") ; 
@@ -51,20 +54,18 @@ buttonDesencriptar.onclick = desencriptar ;
 let copyButton = document.getElementById("botonCopiar");
 let textToCopy = document.getElementById("mensajeResultado");
 
-if (navigator.clipboard) {
-  copyButton.addEventListener("click", function() {
-    navigator.clipboard.writeText(textToCopy.innerText).then(
-      function() {
-        alert("Texto copiado en portapapeles.");
-      },
-      function() {
-        console.log("Error copying text to clipboard.");
-      }
-    );
-  });
-} else {
-  console.log("Clipboard API not supported in this browser.");
-}
-
-
+    if (navigator.clipboard) {
+      copyButton.addEventListener("click", function() {
+        navigator.clipboard.writeText(textToCopy.innerText).then(
+          function() {
+            alert("Texto copiado en portapapeles.");
+          },
+          function() {
+            console.log("Error copying text to clipboard.");
+          }
+        );
+      });
+    } else {
+      console.log("Clipboard API not supported in this browser.");
+    }  
 

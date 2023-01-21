@@ -46,8 +46,8 @@ main{
     color: Gray/gray-400;
     text-align: center;
     margin-top: 15px;
+    border-radius: 24px;
     visibility: hidden; 
-    
 }
 .personaje{
     margin-top: 220px;
@@ -55,6 +55,7 @@ main{
 }
 h2{
    background: white;
+   color: #343A40;
    font-weight: bold;
    font-size: 24px;
    line-height: 29px;
@@ -62,10 +63,14 @@ h2{
    vertical-align: top;
    margin: 3px 0 3px 0 ;
    padding: 3px 3px;
+   visibility: hidden;
 }
 h3{
   background: white;
-  font-size: 16px;
+  color: #495057;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
   text-align: center;
   margin: 3px 0 3px 0 ;
   padding: auto;
@@ -108,22 +113,145 @@ h3{
 }
 footer{
     background: #f3f5fccc;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    display: flex;
+    display: block;
     justify-content: center;
 }
 .facebook, .instagram, .git, .linkedin{
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     background: transparent;
 }
 .datos{
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 20px;
-    font-size: 24px;
+    font-size: 18px;
     color: #0A3871;
 }
 .linkedin{
     border-radius: 50%;
 }
+
+/* Responsive celular */
+@media screen and (max-width: 480px) {
+    /* Estilos para pantallas de 480px o menos */
+    *{
+        width: auto;
+    }
+    .logo{
+        padding-top: 20px;
+        width: 20%;
+    }
+    main{
+        display: block;
+        margin-bottom: 50px;
+        margin-left: 80px;
+    }
+    .texto-Entrada{
+        height: 50%;
+    }
+    .salida{
+        /*float: right;*/
+        position: static;
+        display: inline-block;
+        flex-direction: column;
+        background: white;
+        width: auto;
+        height: 186px;
+        border-radius: 32px;
+        align-items: center;
+    }
+    .mensajeResultado{
+        border-radius: 24px;
+    }
+    .personaje{
+        visibility: hidden;
+        margin: 0px 0px;
+        display: none;
+    }
+    h2{
+        background: white;
+        font-size: 24px;
+        color: #343A40;
+        width: 263px;
+        height: 80px;
+        text-align: center;
+        margin: 0px auto;
+     }
+     h3{
+        background: white;
+        font-size: 18px;
+        width: 263px;
+        height: 80px;
+        text-align: center;
+        margin: 0px auto;
+       
+     }
+    #botonCopiar{
+        border: 1px solid #0A3871;
+        border-radius: 24px;
+        color: #0A3871;
+        cursor: pointer;
+        height: 67px;
+        width: 336px;
+        visibility: hidden;
+        margin: 0px 0px;
+    }
+    .botones{
+        display: block;
+        width: auto;
+        align-items: center;
+        padding: auto;
+    }
+    #boton1{
+        background-color: #0A3871;
+        border: 1px solid #0A3871;
+        border-radius: 24px;
+        color: white;
+        cursor: pointer;
+        height: 67px;
+        width: 343px;
+    }
+    #boton2{
+        background:#D8DFE8;
+        border: 1px solid #0A3871;
+        border-radius: 24px;
+        color: #0A3871;
+        cursor: pointer;
+        height: 67px;
+        width: 343px;
+        margin: 0 0 64px 0;
+        margin-top: 10px;
+    }
+hr{
+    width: 150%;
+}
+    footer{
+        background: #f3f5fccc;
+        margin-left: 120px;
+        text-align: center;
+        display: block;
+        justify-content: center;
+        width: auto;
+    }
+    
+    .facebook, .instagram, .git, .linkedin{
+        width: 50px;
+        height: 50px;
+        background: transparent;
+    }
+    .datos{
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 20px;
+        color: #0A3871;
+    }
+    .linkedin{
+        border-radius: 50%;
+    }
+    
+
+
+  }
+  
