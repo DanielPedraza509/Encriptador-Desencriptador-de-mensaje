@@ -41,16 +41,17 @@ main{
     align-items: center;
 }
 .mensajeResultado{
+    border: none;
     background: white;
     font-size: 32px;
     color: Gray/gray-400;
     text-align: center;
     margin-top: 15px;
     border-radius: 24px;
-    visibility: hidden; 
+    /* visibility: hidden;  */
 }
 .personaje{
-    margin-top: 220px;
+    margin-top: 200px;
     background-color: white;
 }
 h2{
@@ -163,7 +164,9 @@ footer{
         align-items: center;
     }
     .mensajeResultado{
+        border: none;
         border-radius: 24px;
+        
     }
     .personaje{
         visibility: hidden;
