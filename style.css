@@ -42,6 +42,7 @@ main{
 }
 .mensajeResultado{
     border: none;
+    color: #0A3871;
     background: white;
     font-size: 32px;
     color: Gray/gray-400;
@@ -51,7 +52,7 @@ main{
     /* visibility: hidden;  */
 }
 .personaje{
-    margin-top: 200px;
+    margin-top: 100px;
     background-color: white;
 }
 h2{
@@ -85,6 +86,7 @@ h3{
     margin-left: 32px;
     width: 336px;
     visibility: hidden;
+    position: absolute;
 }
 .botones{
     display: flex;
@@ -135,6 +137,7 @@ footer{
 }
 
 /* Responsive celular */
+
 @media screen and (max-width: 480px) {
     /* Estilos para pantallas de 480px o menos */
     *{

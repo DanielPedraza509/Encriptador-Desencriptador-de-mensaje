@@ -21,6 +21,7 @@ function encriptar(stringEncriptada){
     let matrizCodigo = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]] ; 
     stringEncriptada = stringEncriptada.toLowerCase(); 
     if(stringEncriptada == ""){
+       aparecer(); 
        alert("Campo de texto vacío") ;
        }
     else{
@@ -29,18 +30,18 @@ function encriptar(stringEncriptada){
                 stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1]);
             }
           }
-        }
+          desaparecer();
+    }
     return stringEncriptada; 
 }
 
 function desencriptar(stringDesencriptada){
-    
-    let matrizCodigo = [["enter","e"], ["imes","i"], ["ai","a"], ["ober","o"], ["ufat","u"]] ; 
+    let matrizCodigo = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]] ; 
     stringDesencriptada = stringDesencriptada.toLowerCase(); 
 
     for(let i = 0 ; i < stringDesencriptada.length ; i++){
-        if(stringDesencriptada.includes(matrizCodigo[i][0])){
-            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1]) ; 
+        if(stringDesencriptada.includes(matrizCodigo[i][1])){
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0]) ; 
         }
     }
     return stringDesencriptada ; 
@@ -52,9 +53,10 @@ let textToCopy = document.getElementById("mensajeResultado");
 
     if (navigator.clipboard) {
       copyButton.addEventListener("click", function() {
-        navigator.clipboard.writeText(textToCopy.innerText).then(
+        navigator.clipboard.writeText(textToCopy.value).then(
           function() {
             alert("Texto copiado en portapapeles.");
+            mensaje.value = "" ;
           },
           function() {
             console.log("Error copying text to clipboard.");
@@ -65,3 +67,20 @@ let textToCopy = document.getElementById("mensajeResultado");
       console.log("Clipboard API not supported in this browser.");
     }  
 
+
+    function aparecer(){
+        document.getElementById("mensajeH2").style.visibility = "visible";
+        document.getElementById("mensajeH3").style.visibility = "visible";
+        document.getElementById("Persona").style.visibility = "visible";
+        document.getElementById("mensajeResultado").style.visibility = "hidden" ;
+        document.getElementById("mensajeH2").style.visibility = "visible";
+        document.getElementById("botonCopiar").style.visibility = "hidden";
+    }
+
+    function desaparecer(){
+        document.getElementById("mensajeResultado").style.visibility = "visible" ;
+        document.getElementById("botonCopiar").style.visibility = "visible";
+        document.getElementById("mensajeH2").style.visibility = "hidden";
+        document.getElementById("mensajeH3").style.visibility = "hidden";
+        document.getElementById("Persona").style.visibility = "hidden";
+    }
